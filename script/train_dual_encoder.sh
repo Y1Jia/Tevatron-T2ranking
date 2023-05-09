@@ -13,6 +13,7 @@ encode_batch_size=1024
 search_batch_size=1000
 depth=1000 # 检索top1000
 
+# train
 python -m tevatron.driver.train \
   --output_dir ${output_dir} \
   --model_name_or_path bert-base-chinese \
@@ -28,9 +29,10 @@ python -m tevatron.driver.train \
   --logging_steps 100 \
   --overwrite_output_dir \
   --untie_encoder True \
-  --lr_scheduler_type constant
+  --lr_scheduler_type constant \
+  --use_lamb
   
-# encoding
+# encode
 mkdir ${encode_dir}
 cp ${output_dir}/query_model/config.json ${output_dir}
 python -m tevatron.driver.encode \
