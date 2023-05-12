@@ -57,7 +57,7 @@ Tevatron使用的数据集格式如下图所示：
 
 # 训练和评估
 
-训练超参数同t2ranking论文（除t2ranking src中使用了warm up，这里没有使用）。在t2ranking论文中使用的是8块A100（80GB），batch size=128。
+训练超参数同t2ranking论文。在t2ranking论文中使用的是8块A100（80GB），batch size=128。
 
 通过[script/train_dual_encoder.sh](https://github.com/Y1Jia/Tevatron-T2ranking/blob/main/script/train_dual_encoder.sh)，实现训练和评估。
 
